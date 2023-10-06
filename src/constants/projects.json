@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "title": "Wearable Biomimetic Appendage (WBA)",
+        "description": "The Wearable Biomimetic Appendage is a soft robotic device that can mimic a user's hand and finger movements to aid in basic tasks. The device is composed of three main components: a control glove, a calibration and controller program, and a wearable robotic hand.",
+        "image": "Complete-Assembly.png",
+        "link": "https://github.com/utepe/Capstone"
+    },
+    {
+        "id": 2,
+        "title": "Computer Aided Analysis Library",
+        "description": "Independent Numerical Methods Library using Python, and the Numpy and MatPlotLib Libraries done on my own as an extension on the material and concepts taught in ELEC 2110 - Computer Aided Analysis",
+        "image": "plot.png",
+        "link": "https://github.com/utepe/CAA-Library"
+    },
+    {
+        "id": 3,
+        "title": "Computer Aided Analysis Library",
+        "description": "Independent Numerical Methods Library using Python, and the Numpy and MatPlotLib Libraries done on my own as an extension on the material and concepts taught in ELEC 2110 - Computer Aided Analysis",
+        "image": "plot.png",
+        "link": "https://github.com/utepe/CAA-Library"
+    },
+    {
+        "id": 4,
+        "title": "Computer Aided Analysis Library",
+        "description": "Independent Numerical Methods Library using Python, and the Numpy and MatPlotLib Libraries done on my own as an extension on the material and concepts taught in ELEC 2110 - Computer Aided Analysis",
+        "image": "plot.png",
+        "link": "https://github.com/utepe/CAA-Library"
+    }
+]
