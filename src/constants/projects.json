@@ -2,28 +2,35 @@
     {
         "id": 1,
         "title": "Wearable Biomimetic Appendage (WBA)",
-        "description": "The Wearable Biomimetic Appendage is a soft robotic device that can mimic a user's hand and finger movements to aid in basic tasks. The device is composed of three main components: a control glove, a calibration and controller program, and a wearable robotic hand.",
+        "overview": "The Wearable Biomimetic Appendage is a soft robotic device that can mimic a user's hand and finger movements to aid in basic tasks. The device is composed of three main components: a control glove, a calibration and controller program, and a wearable robotic hand.",
         "image": "Complete-Assembly.png",
-        "link": "https://github.com/utepe/Capstone"
+        "link": "https://github.com/utepe/Capstone",
+        "keyPoints": [
+            "Constructed a wearable robotic hand that can mimic users finger movements using a control glove with collaborating with two other team members to meet deadlines and deliverables",
+            "Created a control glove using Hall effect sensors and the RaspberryPi Pico to track finger movements using a robust three-step calibration algorithm",
+            "Designed an electronic control unit PCB for control over entire WBA device",
+            "Developed a virtual environment with a hand model in Unity to interface with the control glove and emulate the users hand movements in a virtual reality setting",
+            "Programmed a socket-based communication interface between the Pico and Unity that allowed for cycling between different modes of the WBA"
+        ]
     },
     {
         "id": 2,
         "title": "Computer Aided Analysis Library",
-        "description": "Independent Numerical Methods Library using Python, and the Numpy and MatPlotLib Libraries done on my own as an extension on the material and concepts taught in ELEC 2110 - Computer Aided Analysis",
+        "overview": "Independent Numerical Methods Library using Python, and the Numpy and MatPlotLib Libraries done on my own as an extension on the material and concepts taught in ELEC 2110 - Computer Aided Analysis",
         "image": "plot.png",
         "link": "https://github.com/utepe/CAA-Library"
     },
     {
         "id": 3,
         "title": "Computer Aided Analysis Library",
-        "description": "Independent Numerical Methods Library using Python, and the Numpy and MatPlotLib Libraries done on my own as an extension on the material and concepts taught in ELEC 2110 - Computer Aided Analysis",
+        "overview": "Independent Numerical Methods Library using Python, and the Numpy and MatPlotLib Libraries done on my own as an extension on the material and concepts taught in ELEC 2110 - Computer Aided Analysis",
         "image": "plot.png",
         "link": "https://github.com/utepe/CAA-Library"
     },
     {
         "id": 4,
         "title": "Computer Aided Analysis Library",
-        "description": "Independent Numerical Methods Library using Python, and the Numpy and MatPlotLib Libraries done on my own as an extension on the material and concepts taught in ELEC 2110 - Computer Aided Analysis",
+        "overview": "Independent Numerical Methods Library using Python, and the Numpy and MatPlotLib Libraries done on my own as an extension on the material and concepts taught in ELEC 2110 - Computer Aided Analysis",
         "image": "plot.png",
         "link": "https://github.com/utepe/CAA-Library"
     }

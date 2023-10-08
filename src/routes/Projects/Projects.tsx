@@ -8,11 +8,11 @@ import ActionAreaCard from "../../components/ActionAreaCard/ActionAreaCard";
 export interface Project {
   id: number;
   title: string;
-  description: string;
+  overview: string;
   link: string;
   image: string;
+  keyPoints?: string[];
 }
-
 
 const Projects = () => {
   const [projects, setProjects] = useState<Project[]>([]);
@@ -31,12 +31,12 @@ const Projects = () => {
       container
       spacing={{ xs: 3, md: 4 }}
       columns={{ xs: 6, sm: 8, md: 12, lg: 12, xl: 12 }}
-    //   sx={{ marginTop: "20px" }}
+      sx={{ paddingTop: "10px" }}
     >
       {projects.map((project) => {
         return (
-          <Grid xs={6} sm={4} md={4} lg={4} xl={3} key={project.id} sx={{padding: "10px"}}>
-            <ActionAreaCard project={project}/>
+          <Grid item xs={6} sm={4} md={4} lg={4} xl={3} key={project.id}>
+            <ActionAreaCard project={project} />
           </Grid>
         );
       })}
