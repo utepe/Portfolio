@@ -34,7 +34,7 @@ const NavigationBar = () => {
 
   return (
     <Fragment>
-      <AppBar position="static" sx={{ backgroundColor: "#000435" }}>
+      <AppBar position="static" sx={{ backgroundColor: "#000435" }} elevation={0}>
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             <Typography
@@ -115,7 +115,6 @@ const NavigationBar = () => {
               {pages.map((page) => (
                 <Button
                   key={page}
-                  //   TODO: Change OnClick to navigate to the page
                   onClick={(e) => handlePageChange(e.currentTarget.textContent)}
                   sx={{ my: 2, color: "white", display: "block" }}
                 >
