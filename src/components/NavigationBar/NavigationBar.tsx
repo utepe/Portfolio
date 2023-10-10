@@ -129,7 +129,7 @@ const NavigationBar = () => {
           </Toolbar>
         </Container>
       </AppBar>
-      <div style={{ padding: "1%" }}>
+      <div style={{ paddingLeft: "1%", paddingRight: "1%" }}>
         <Outlet />
       </div>
     </Fragment>
