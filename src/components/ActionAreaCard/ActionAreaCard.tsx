@@ -8,10 +8,11 @@ import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import Slide from "@mui/material/Slide";
 import { CardActionArea } from "@mui/material";
-import { Project } from "../../routes/Projects/Projects";
+import { Project } from "../../routes/Project/Project";
 import { Fragment, forwardRef, useState } from "react";
 import { TransitionProps } from "@mui/material/transitions";
-import { keyboard } from "@testing-library/user-event/dist/keyboard";
+import UnorderedList from "../UnorderedList/UnorderedList";
+import YoutubeEmbed from "../YoutubeEmbed/YoutubeEmbed";
 
 type ActionAreaCardProps = {
   project: Project;
@@ -27,7 +28,7 @@ const Transition = forwardRef(function Transition(
 });
 
 export default function ActionAreaCard({ project }: ActionAreaCardProps) {
-  const { title, overview, image, link, keyPoints } = project;
+  const { title, overview, image, githubLink, keyPoints, youtubeEmbedId } = project;
 
   const [open, setOpen] = useState(false);
 
@@ -44,7 +45,6 @@ export default function ActionAreaCard({ project }: ActionAreaCardProps) {
       <Card sx={{ maxWidth: 600 }}>
         {/* TODO make WBA link to separate page */}
         {/* FIXME: media to display full image */}
-        {/* TODO:  embed WBA with youtube video  */}
         <CardActionArea onClick={handleClickOpen}>
           <CardMedia
             component="img"
@@ -78,13 +78,17 @@ export default function ActionAreaCard({ project }: ActionAreaCardProps) {
             {overview}
           </DialogContentText>
           {keyPoints && (
-            <DialogContentText id="dialog-slide-key-points">
-              <ul>
-                {keyPoints.map((point) => (
-                  <li>{point}</li>
-                ))}
-              </ul>
-            </DialogContentText>
+            <UnorderedList
+              elements={keyPoints}
+              renderElement={(element) => (
+                <DialogContentText id="dialog-slide-key-points">
+                  {element}
+                </DialogContentText>
+              )}
+            />
+          )}
+          {youtubeEmbedId && (
+            <YoutubeEmbed embedId={youtubeEmbedId} />
           )}
         </DialogContent>
       </Dialog>
