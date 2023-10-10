@@ -34,7 +34,11 @@ const NavigationBar = () => {
 
   return (
     <Fragment>
-      <AppBar position="static" sx={{ backgroundColor: "#000435" }} elevation={0}>
+      <AppBar
+        position="static"
+        sx={{ backgroundColor: "#000435" }}
+        elevation={0}
+      >
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             <Typography
@@ -125,7 +129,9 @@ const NavigationBar = () => {
           </Toolbar>
         </Container>
       </AppBar>
-      <Outlet />
+      <div style={{ padding: "1%" }}>
+        <Outlet />
+      </div>
     </Fragment>
   );
 };
