@@ -7,7 +7,7 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import Slide from "@mui/material/Slide";
-import { CardActionArea } from "@mui/material";
+import { Button, CardActionArea } from "@mui/material";
 import { Project } from "../../routes/Project/Project";
 import { Fragment, forwardRef, useState } from "react";
 import { TransitionProps } from "@mui/material/transitions";
@@ -28,7 +28,8 @@ const Transition = forwardRef(function Transition(
 });
 
 export default function ActionAreaCard({ project }: ActionAreaCardProps) {
-  const { title, overview, image, githubLink, keyPoints, youtubeEmbedId } = project;
+  const { title, overview, image, githubLink, keyPoints, youtubeEmbedId } =
+    project;
 
   const [open, setOpen] = useState(false);
 
@@ -38,6 +39,12 @@ export default function ActionAreaCard({ project }: ActionAreaCardProps) {
 
   const handleClose = () => {
     setOpen(false);
+    if (youtubeEmbedId) {
+      const iframe = document.querySelector("iframe");
+      if (iframe) {
+        iframe.src = iframe.src;
+      }
+    }
   };
 
   return (
@@ -66,6 +73,8 @@ export default function ActionAreaCard({ project }: ActionAreaCardProps) {
         </CardActionArea>
       </Card>
       <Dialog
+        fullWidth
+        maxWidth="md"
         open={open}
         TransitionComponent={Transition}
         keepMounted
@@ -87,9 +96,15 @@ export default function ActionAreaCard({ project }: ActionAreaCardProps) {
               )}
             />
           )}
-          {youtubeEmbedId && (
-            <YoutubeEmbed embedId={youtubeEmbedId} />
-          )}
+          <Button
+            variant="outlined"
+            sx={{ marginBottom: "10px" }}
+            href={githubLink}
+            target="_blank"
+          >
+            View Github Repository
+          </Button>
+          {youtubeEmbedId && <YoutubeEmbed embedId={youtubeEmbedId} />}
         </DialogContent>
       </Dialog>
     </Fragment>
