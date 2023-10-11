@@ -5,6 +5,7 @@ import projectData from "../../constants/projects.json";
 import Grid from "@mui/material/Grid";
 import ActionAreaCard from "../../components/ActionAreaCard/ActionAreaCard";
 import { Project } from "../Project/Project";
+import Typography from "@mui/material/Typography";
 
 const Projects = () => {
   const [projects, setProjects] = useState<Project[]>([]);
@@ -20,7 +21,7 @@ const Projects = () => {
 
   return (
     <Fragment>
-      <h1>Projects</h1>
+      <Typography variant="h3">Projects</Typography>
       <Grid
         container
         spacing={{ xs: 3, md: 4 }}
