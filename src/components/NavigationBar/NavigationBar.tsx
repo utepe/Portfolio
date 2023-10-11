@@ -17,6 +17,7 @@ const NavigationBar = () => {
   const navigate = useNavigate();
 
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
+  const [currentPage, setCurrentPage] = useState<string>("");
 
   const handleOpenNavMenu = (event: MouseEvent<HTMLButtonElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -24,6 +25,8 @@ const NavigationBar = () => {
 
   const handlePageChange = (page: string | null) => {
     if (!page) return;
+
+    setCurrentPage(page);
     if (page === "Home") return navigate("/");
     navigate(`/${page?.toLocaleLowerCase()}`);
   };
@@ -118,11 +121,18 @@ const NavigationBar = () => {
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
               {pages.map((page) => (
                 <Button
+                  disabled={page === currentPage}
                   key={page}
                   onClick={(e) => handlePageChange(e.currentTarget.textContent)}
                   sx={{ my: 2, color: "white", display: "block" }}
                 >
-                  {page}
+                  {page === currentPage ? (
+                    <span style={{ color: "grey", borderBottom: "2px solid white" }}>
+                      {page}
+                    </span>
+                  ) : (
+                    <>{ page }</>
+                  )}
                 </Button>
               ))}
             </Box>
