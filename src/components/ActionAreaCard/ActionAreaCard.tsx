@@ -98,7 +98,7 @@ export default function ActionAreaCard({ project }: ActionAreaCardProps) {
           )}
           <Button
             variant="outlined"
-            sx={{ marginBottom: "10px" }}
+            sx={{ marginBottom: "10px" }} // TODO: if youtubeEmbedId below, add marginBottom
             href={githubLink}
             target="_blank"
           >
