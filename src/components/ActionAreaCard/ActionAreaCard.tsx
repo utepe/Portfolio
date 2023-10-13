@@ -50,7 +50,7 @@ export default function ActionAreaCard({ project }: ActionAreaCardProps) {
   return (
     <Fragment>
       <Card sx={{ maxWidth: 600 }}>
-        {/* TODO make WBA link to separate page */}
+        {/* TODO: add WBA poster link to modal */}
         {/* FIXME: media to display full image */}
         <CardActionArea onClick={handleClickOpen}>
           <CardMedia
