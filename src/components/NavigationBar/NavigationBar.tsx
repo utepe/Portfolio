@@ -10,6 +10,7 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import { useState, MouseEvent, Fragment } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
+import Footer from "../Footer/Footer";
 
 const pages = ["Home", "Resume", "Projects", "Contact"];
 
@@ -141,7 +142,8 @@ const NavigationBar = () => {
       </AppBar>
       <div style={{ paddingLeft: "1%", paddingRight: "1%" }}>
         <Outlet />
-      </div>
+      </div> 
+      <Footer title={"Uygur Tepe Portfolio"} />
     </Fragment>
   );
 };
