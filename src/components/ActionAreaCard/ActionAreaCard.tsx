@@ -13,6 +13,7 @@ import { Fragment, forwardRef, useState } from "react";
 import { TransitionProps } from "@mui/material/transitions";
 import UnorderedList from "../UnorderedList/UnorderedList";
 import YoutubeEmbed from "../YoutubeEmbed/YoutubeEmbed";
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 type ActionAreaCardProps = {
   project: Project;
@@ -103,6 +104,8 @@ export default function ActionAreaCard({ project }: ActionAreaCardProps) {
             target="_blank"
           >
             View Github Repository
+            {/* TODO: add padding to GH Icon */}
+            {/* <GitHubIcon /> */}
           </Button>
           {youtubeEmbedId && <YoutubeEmbed embedId={youtubeEmbedId} />}
         </DialogContent>
