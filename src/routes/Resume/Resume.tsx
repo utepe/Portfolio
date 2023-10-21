@@ -1,31 +1,16 @@
 import { Fragment, useEffect, useState } from "react";
-import Paper from "@mui/material/Paper";
 import Stack from "@mui/material/Stack";
 import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
-import { styled } from "@mui/material/styles";
-import { Button, Grid, Typography } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 
 import experienceData from "../../constants/experience.json";
-import UnorderedList from "../../components/UnorderedList/UnorderedList";
+import ExperienceCard, {
+  Experience,
+  Item,
+} from "../../components/Experience/Experience";
+import TwoItemGridCard from "../../components/TwoItemGridCard/TwoItemGridCard";
 
 // import TepeResume from "../../assets/TepeResume.pdf";
-
-interface Experience {
-  id: number;
-  jobTitle: string;
-  company: string;
-  location: string;
-  startDate: string;
-  endDate: string;
-  description: string[];
-}
-
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-  ...theme.typography.body1,
-  padding: theme.spacing(1),
-  color: theme.palette.text.secondary,
-}));
 
 const Resume = () => {
   const [experiences, setExperiences] = useState<Experience[]>([]);
@@ -41,18 +26,9 @@ const Resume = () => {
 
   return (
     <Fragment>
-      <Grid
-        container
-        justifyContent="space-between"
-        alignItems="center"
-        rowSpacing={1}
-        columns={{ xs: 4, sm: 8, md: 12 }}
-        sx={{ flexGrow: 1, paddingBottom: "10px" }}
-      >
-        <Grid item xs={4}>
-          <Typography variant="h3">Experiences</Typography>
-        </Grid>
-        <Grid item xs={4} sx={{ textAlign: "end" }}>
+      <TwoItemGridCard
+        leftItem={<Typography variant="h3">Experiences</Typography>}
+        rightItem={
           <Button
             variant="outlined"
             color="primary"
@@ -63,50 +39,33 @@ const Resume = () => {
           >
             View Full Resume
           </Button>
-        </Grid>
-      </Grid>
+        }
+      />
       <Stack spacing={2}>
         {experiences.map((experience, index) => (
-          <Item key={index} elevation={1}>
-            <Grid
-              container
-              justifyContent="space-between"
-              alignItems="flex-start"
-              rowSpacing={1}
-              columnSpacing={{ xs: 1, sm: 2, md: 3 }}
-              sx={{ flexGrow: 1 }}
-            >
-              <Grid item xs={6}>
-                <Typography variant="h5">{experience.jobTitle}</Typography>
-              </Grid>
-              <Grid item xs={6}>
-                <Typography variant="h6" sx={{ textAlign: "end" }}>
-                  {experience.company}
-                </Typography>
-              </Grid>
-              <Grid item xs={6}>
-                <Typography variant="subtitle1">
-                  {experience.startDate} - {experience.endDate}
-                </Typography>
-              </Grid>
-              <Grid item xs={6} sx={{ textAlign: "end" }}>
-                <Typography variant="subtitle1">
-                  {experience.location}
-                </Typography>
-              </Grid>
-            </Grid>
-            {/* TODO: ensure that links in description are clickable */}
-            <UnorderedList
-              elements={experience.description}
-              renderElement={(element) => (
-                <Typography variant="body1">{element}</Typography>
-              )}
-            />
-          </Item>
+          <ExperienceCard index={index} experience={experience} />
         ))}
       </Stack>
       <div>
         <Typography variant="h3">Skills</Typography>
+        <Item elevation={1}>
+          <Typography variant="subtitle1">
+            <b>Languages</b>: C#, Java, Python, Typescript/Javascript, C/C++,
+            VDHL
+          </Typography>
+          <Typography variant="subtitle1">
+            <b>Engineering Tools</b>: MATLAB/Simulink, Unity, RaspberryPi,
+            Arduino, LabVIEW, LTSpice, FPGA, ModelSim
+          </Typography>
+          <Typography variant="subtitle1">
+            <b>Developer Tools</b>: Git, Postman, Docker, AWS, Jenkins, Azure,
+            VS Code, Visual Studio, IntelliJ
+          </Typography>
+          <Typography variant="subtitle1">
+            <b>Libraries</b>: SciPy, pandas, NumPy, Matplotlib, Machine
+            (MicroPython)
+          </Typography>
+        </Item>
       </div>
     </Fragment>
   );
