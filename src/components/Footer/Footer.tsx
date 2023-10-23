@@ -6,7 +6,8 @@ import Link from "@mui/material/Link";
 import TwoItemGridCard from "../TwoItemGridCard/TwoItemGridCard";
 import IconButton from "@mui/material/IconButton";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import GitHubIcon from '@mui/icons-material/GitHub';
+import GitHubIcon from "@mui/icons-material/GitHub";
+import EmailIcon from '@mui/icons-material/Email';
 
 function Copyright() {
   return (
@@ -44,12 +45,29 @@ const Footer = ({ title }: FooterProps) => {
           }
           rightItem={
             <Fragment>
-            <IconButton aria-label="LinkedIn" size="large" href="https://www.linkedin.com/in/uygur-tepe/" target="_blank">
-              <LinkedInIcon fontSize="inherit" />
-            </IconButton>
-            <IconButton aria-label="LinkedIn" size="large" href="https://github.com/utepe" target="_blank">
-              <GitHubIcon fontSize="inherit" />
-            </IconButton>
+              <IconButton
+                aria-label="LinkedIn"
+                size="large"
+                href="https://www.linkedin.com/in/uygur-tepe/"
+                target="_blank"
+              >
+                <LinkedInIcon fontSize="inherit" />
+              </IconButton>
+              <IconButton
+                aria-label="GitHub"
+                size="large"
+                href="https://github.com/utepe"
+                target="_blank"
+              >
+                <GitHubIcon fontSize="inherit" />
+              </IconButton>
+              <IconButton
+                aria-label="Email"
+                size="large"
+                href="mailto:uygurtepe@protonmail.com"
+              >
+                <EmailIcon fontSize="inherit" />
+              </IconButton>
             </Fragment>
           }
         />
