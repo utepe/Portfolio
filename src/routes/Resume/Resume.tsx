@@ -43,7 +43,7 @@ const Resume = () => {
       />
       <Stack spacing={2}>
         {experiences.map((experience, index) => (
-          <ExperienceCard index={index} experience={experience} />
+          <ExperienceCard key={index} experience={experience} />
         ))}
       </Stack>
       <div>

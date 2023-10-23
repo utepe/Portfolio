@@ -23,13 +23,12 @@ export interface Experience {
 }
 
 type ExperienceCardProps = {
-    index: number;
-    experience: Experience;
-  };
+  experience: Experience;
+};
 
-const ExperienceCard = ({ index, experience }: ExperienceCardProps) => {
+const ExperienceCard = ({ experience }: ExperienceCardProps) => {
   return (
-    <Item key={index} elevation={1}>
+    <Item elevation={1}>
       <Grid
         container
         justifyContent="space-between"
@@ -51,8 +50,10 @@ const ExperienceCard = ({ index, experience }: ExperienceCardProps) => {
             {experience.startDate} - {experience.endDate}
           </Typography>
         </Grid>
-        <Grid item xs={6} sx={{ textAlign: "end" }}>
-          <Typography variant="subtitle1">{experience.location}</Typography>
+        <Grid item xs={6}>
+          <Typography variant="subtitle1" sx={{ textAlign: "end" }}>
+            {experience.location}
+          </Typography>
         </Grid>
       </Grid>
       {/* TODO: ensure that links in description are clickable */}
