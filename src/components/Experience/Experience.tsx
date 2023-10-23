@@ -56,7 +56,10 @@ const ExperienceCard = ({ experience }: ExperienceCardProps) => {
           </Typography>
         </Grid>
       </Grid>
-      {/* TODO: ensure that links in description are clickable */}
+      {/* 
+        TODO: ensure that links in description are clickable 
+        Maybe use html-react-parser
+        */}
       <UnorderedList
         elements={experience.description}
         renderElement={(element) => (
