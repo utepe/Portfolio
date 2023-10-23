@@ -10,7 +10,7 @@ import ExperienceCard, {
 } from "../../components/Experience/Experience";
 import TwoItemGridCard from "../../components/TwoItemGridCard/TwoItemGridCard";
 
-// import TepeResume from "../../assets/TepeResume.pdf";
+import TepeResume from "../../assets/pdfs/TepeResume.pdf";
 
 const Resume = () => {
   const [experiences, setExperiences] = useState<Experience[]>([]);
@@ -33,9 +33,8 @@ const Resume = () => {
             variant="outlined"
             color="primary"
             endIcon={<PictureAsPdfIcon />}
-            /* TODO: resolve this pdf import error */
-            // href={TepeResume}
-            // target="_blank"
+            href={TepeResume}
+            target="_blank"
           >
             View Full Resume
           </Button>
