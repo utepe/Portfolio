@@ -6,29 +6,19 @@ import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
-import Slide from "@mui/material/Slide";
 import { Button, CardActionArea } from "@mui/material";
 import { Project } from "../../routes/Project/Project";
-import { Fragment, forwardRef, useState } from "react";
-import { TransitionProps } from "@mui/material/transitions";
+import { Fragment, useState } from "react";
 import UnorderedList from "../UnorderedList/UnorderedList";
 import YoutubeEmbed from "../YoutubeEmbed/YoutubeEmbed";
 import GitHubIcon from '@mui/icons-material/GitHub';
+import { Transition } from "../AlertDialog/AlertDialog";
 
 type ActionAreaCardProps = {
   project: Project;
 };
 
-const Transition = forwardRef(function Transition(
-  props: TransitionProps & {
-    children: React.ReactElement<any, any>;
-  },
-  ref: React.Ref<unknown>
-) {
-  return <Slide direction="up" ref={ref} {...props} />;
-});
-
-export default function ActionAreaCard({ project }: ActionAreaCardProps) {
+const ActionAreaCard = ({ project }: ActionAreaCardProps) => {
   const { title, overview, image, githubLink, keyPoints, youtubeEmbedId } =
     project;
 
@@ -73,6 +63,8 @@ export default function ActionAreaCard({ project }: ActionAreaCardProps) {
           </CardContent>
         </CardActionArea>
       </Card>
+      {/* TODO: export this Dialog component with Dialog and export transition to both Alert Dialog and this one
+      TODO: have DialogTitle and Dialog Content as props as well making it more modular */}
       <Dialog
         fullWidth
         maxWidth="md"
@@ -113,3 +105,5 @@ export default function ActionAreaCard({ project }: ActionAreaCardProps) {
     </Fragment>
   );
 }
+
+export default ActionAreaCard;
