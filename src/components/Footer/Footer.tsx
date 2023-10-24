@@ -36,9 +36,6 @@ const Footer = ({ title }: FooterProps) => {
         <TwoItemGridCard
           leftItem={
             <Fragment>
-              <Typography variant="h6" gutterBottom>
-                {title}
-              </Typography>
               <Copyright />
             </Fragment>
           }
