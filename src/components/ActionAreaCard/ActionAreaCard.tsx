@@ -11,7 +11,7 @@ import { Project } from "../../routes/Project/Project";
 import { Fragment, useState } from "react";
 import UnorderedList from "../UnorderedList/UnorderedList";
 import YoutubeEmbed from "../YoutubeEmbed/YoutubeEmbed";
-import GitHubIcon from '@mui/icons-material/GitHub';
+import GitHubIcon from "@mui/icons-material/GitHub";
 import { Transition } from "../AlertDialog/AlertDialog";
 
 type ActionAreaCardProps = {
@@ -80,14 +80,19 @@ const ActionAreaCard = ({ project }: ActionAreaCardProps) => {
             {overview}
           </DialogContentText>
           {keyPoints && (
-            <UnorderedList
-              elements={keyPoints}
-              renderElement={(element) => (
-                <DialogContentText id="dialog-slide-key-points">
-                  {element}
-                </DialogContentText>
-              )}
-            />
+            <Fragment >
+              <DialogContentText id="dialog-slide-description" variant="subtitle1">
+                <b>Key Points from the Project</b>
+              </DialogContentText>
+              <UnorderedList
+                elements={keyPoints}
+                renderElement={(element) => (
+                  <DialogContentText id="dialog-slide-key-points">
+                    {element}
+                  </DialogContentText>
+                )}
+              />
+            </Fragment>
           )}
           <Button
             variant="outlined"
@@ -104,6 +109,6 @@ const ActionAreaCard = ({ project }: ActionAreaCardProps) => {
       </Dialog>
     </Fragment>
   );
-}
+};
 
 export default ActionAreaCard;

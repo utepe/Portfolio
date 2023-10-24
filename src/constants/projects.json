@@ -3,7 +3,7 @@
         "id": 1,
         "titleId": "WBA",
         "title": "Wearable Biomimetic Appendage (WBA)",
-        "overview": "The Wearable Biomimetic Appendage is a soft robotic device that can mimic a user's hand and finger movements to aid in basic tasks. The device is composed of three main components: a control glove, a calibration and controller program, and a wearable robotic hand.",
+        "overview": "The Wearable Biomimetic Appendage (WBA) is a soft robotic device that can mimic a user's hand and finger movements to aid in basic tasks. The device is composed of three main components: a control glove, a calibration and controller program, and a wearable robotic hand. The control glove using Hall sensors and magnets was designed for precise finger tracking, the calibration program visualized with a virtual reality (VR) environment was constructed with Unity, and the robotic hand was developed to mimic a user's movements. These achievements showcase the project's potential for diverse virtual- and real world applications.",
         "image": "Complete-Assembly.png",
         "githubLink": "https://github.com/utepe/Capstone",
         "youtubeEmbedId": "UIM3DzoZ4W8?si=B2rP1VwaF0M9oF9o",
