@@ -19,7 +19,7 @@
         "id": 2,
         "titleId": "Portfolio",
         "title": "Portfolio Website",
-        "overview": "This website was created to showcase my projects, experience and skills. It was created using primarily using React and MaterialUI. I designed the website to be responsive so can be viewed on any screen size including mobile devices. The website is hosted on GitHub Pages.",
+        "overview": "This website was created to showcase my projects, experience and skills. It was created using primarily using Typescript, React and MaterialUI. I designed the website to be responsive so can be viewed on any screen size including mobile devices. The website is hosted on GitHub Pages.",
         "image": "logo512.png",
         "githubLink": "https://github.com/utepe/Portfolio"
     },
