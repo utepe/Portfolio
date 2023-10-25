@@ -118,7 +118,7 @@ const ContactForm = () => {
         </Grid>
       </Fragment>
       <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
-        {/* TODO: disable button if data fields are empty? */}
+        {/* TODO: ensure that cant send message without filling in required field */}
         <Button variant="outlined" disabled={disableSubmit} onClick={handleSubmit} sx={{ mt: 3, ml: 1 }}>
           Submit
         </Button>
