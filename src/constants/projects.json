@@ -18,6 +18,14 @@
     },
     {
         "id": 2,
+        "titleId": "UnityVRHand",
+        "title": "Virtual Hand Model in Unity",
+        "overview": "The Virtual Hand Model is a hand model constructed in Unity that can be used in virtual reality applications. It was created using the Unity game engine and the Oculus Integration package. It was designed to be used with the WBA project to visualize the user's hand movements in a virtual environment in order to test and validate the control glove's calibration. It also acts as a controller for the WBA device in order to cycle between different modes of the device.",
+        "image": "UnityGUI.png",
+        "githubLink": "https://github.com/utepe/UnityHandModel"
+    },
+    {
+        "id": 3,
         "titleId": "Portfolio",
         "title": "Portfolio Website",
         "overview": "This website was created to showcase my projects, experience and skills. It was created using primarily using Typescript, React and MaterialUI. I designed the website to be responsive so can be viewed on any screen size including mobile devices. The website is hosted on GitHub Pages.",
@@ -25,16 +33,8 @@
         "githubLink": "https://github.com/utepe/Portfolio"
     },
     {
-        "id": 3,
-        "titleId": "CAALibrary",
-        "title": "Computer Aided Analysis Library",
-        "overview": "Independent Numerical Methods Library using Python, and the Numpy and MatPlotLib Libraries done on my own as an extension on the material and concepts taught in ELEC 2110 - Computer Aided Analysis",
-        "image": "plot.png",
-        "githubLink": "https://github.com/utepe/CAA-Library"
-    },
-    {
         "id": 4,
-        "titleId": "CAALibrary2",
+        "titleId": "CAALibrary",
         "title": "Computer Aided Analysis Library",
         "overview": "Independent Numerical Methods Library using Python, and the Numpy and MatPlotLib Libraries done on my own as an extension on the material and concepts taught in ELEC 2110 - Computer Aided Analysis",
         "image": "plot.png",
