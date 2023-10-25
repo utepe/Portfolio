@@ -33,7 +33,7 @@
         "company": "Open Systems Technologies",
         "location": "Detroit, Michigan",
         "startDate": "05/21",
-        "endDate": "08/23",
+        "endDate": "08/21",
         "description": [
             "Contracted to the Midmark Corporation to work on their Real-Time Locating System (Midmark RTLS), improving experience of healthcare professionals and patients by providing real-time location tracking of medical equipment",
             "Coordinated with stakeholders and UX designers to design and integrate over 20 reusable React UI components to improve the user experience of the application",
