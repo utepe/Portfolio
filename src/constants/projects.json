@@ -17,6 +17,14 @@
     },
     {
         "id": 2,
+        "titleId": "Portfolio",
+        "title": "Portfolio Website",
+        "overview": "This website was created to showcase my projects, experience and skills. It was created using primarily using React and MaterialUI. I designed the website to be responsive so can be viewed on any screen size including mobile devices. The website is hosted on GitHub Pages.",
+        "image": "logo512.png",
+        "githubLink": "https://github.com/utepe/Portfolio"
+    },
+    {
+        "id": 3,
         "titleId": "CAALibrary",
         "title": "Computer Aided Analysis Library",
         "overview": "Independent Numerical Methods Library using Python, and the Numpy and MatPlotLib Libraries done on my own as an extension on the material and concepts taught in ELEC 2110 - Computer Aided Analysis",
@@ -24,16 +32,8 @@
         "githubLink": "https://github.com/utepe/CAA-Library"
     },
     {
-        "id": 3,
-        "titleId": "CAALibrary2",
-        "title": "Computer Aided Analysis Library",
-        "overview": "Independent Numerical Methods Library using Python, and the Numpy and MatPlotLib Libraries done on my own as an extension on the material and concepts taught in ELEC 2110 - Computer Aided Analysis",
-        "image": "plot.png",
-        "githubLink": "https://github.com/utepe/CAA-Library"
-    },
-    {
         "id": 4,
-        "titleId": "CAALibrary3",
+        "titleId": "CAALibrary2",
         "title": "Computer Aided Analysis Library",
         "overview": "Independent Numerical Methods Library using Python, and the Numpy and MatPlotLib Libraries done on my own as an extension on the material and concepts taught in ELEC 2110 - Computer Aided Analysis",
         "image": "plot.png",
