@@ -11,6 +11,7 @@ export interface Project {
   title: string;
   overview: string;
   githubLink: string;
+  poster?: string;
   image: string;
   youtubeEmbedId?: string;
   keyPoints?: string[];

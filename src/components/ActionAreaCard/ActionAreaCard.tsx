@@ -13,13 +13,15 @@ import UnorderedList from "../UnorderedList/UnorderedList";
 import YoutubeEmbed from "../YoutubeEmbed/YoutubeEmbed";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { Transition } from "../AlertDialog/AlertDialog";
+import TwoItemGridCard from "../TwoItemGridCard/TwoItemGridCard";
+import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
 
 type ActionAreaCardProps = {
   project: Project;
 };
 
 const ActionAreaCard = ({ project }: ActionAreaCardProps) => {
-  const { title, overview, image, githubLink, keyPoints, youtubeEmbedId } =
+  const { title, overview, image, githubLink, keyPoints, youtubeEmbedId, poster } =
     project;
 
   const [open, setOpen] = useState(false);
@@ -41,7 +43,6 @@ const ActionAreaCard = ({ project }: ActionAreaCardProps) => {
   return (
     <Fragment>
       <Card sx={{ maxWidth: 600 }}>
-        {/* TODO: add WBA poster link to modal */}
         {/* FIXME: media to display full image */}
         <CardActionArea onClick={handleClickOpen}>
           <CardMedia
@@ -80,9 +81,12 @@ const ActionAreaCard = ({ project }: ActionAreaCardProps) => {
             {overview}
           </DialogContentText>
           {keyPoints && (
-            <Fragment >
-              <DialogContentText id="dialog-slide-description" variant="subtitle1">
-                <b>Key Points from the Project</b>
+            <Fragment>
+              <DialogContentText
+                id="dialog-slide-description"
+                variant="subtitle1"
+              >
+                <br /><b>Key Points from the Project</b>
               </DialogContentText>
               <UnorderedList
                 elements={keyPoints}
@@ -94,16 +98,30 @@ const ActionAreaCard = ({ project }: ActionAreaCardProps) => {
               />
             </Fragment>
           )}
-          <Button
-            variant="outlined"
-            sx={{ marginBottom: "10px" }} // TODO: if youtubeEmbedId below, add marginBottom
-            href={githubLink}
-            target="_blank"
-          >
-            View Github Repository
-            {/* TODO: add padding to GH Icon */}
-            {/* <GitHubIcon /> */}
-          </Button>
+          <TwoItemGridCard
+            leftItem={
+              <Button
+                variant="outlined"
+                href={githubLink}
+                endIcon={<GitHubIcon />}
+                target="_blank"
+              >
+                View Github Repository
+              </Button>
+            }
+            rightItem={ poster ?
+              <Button
+                variant="outlined"
+                color="primary"
+                startIcon={<PictureAsPdfIcon />}
+                href={require(`../../assets/pdfs/${poster}`)}
+                target="_blank"
+              >
+                View Poster
+              </Button> : null
+            }
+          />
+
           {youtubeEmbedId && <YoutubeEmbed embedId={youtubeEmbedId} />}
         </DialogContent>
       </Dialog>
