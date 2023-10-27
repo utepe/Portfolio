@@ -1,5 +1,4 @@
 import { Fragment, useEffect, useState } from "react";
-import { getJsonData } from "../../utils/data.utils";
 
 import projectData from "../../constants/projects.json";
 import Grid from "@mui/material/Grid";
