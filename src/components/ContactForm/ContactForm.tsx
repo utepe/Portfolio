@@ -5,8 +5,23 @@ import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import { Fragment, useState } from "react";
 import AlertDialogSlide from "../AlertDialog/AlertDialog";
+import { useForm, Controller } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
 
 import emailjs from "@emailjs/browser";
+import validationSchema from "./ContactForm.ValidationSchema";
+
+const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+
+type FormValues = {
+  firstName?: string;
+  lastName?: string;
+  emailAddress: string;
+  subject: string;
+  message: string;
+};
 
 const ContactForm = () => {
   const [firstName, setFirstName] = useState("");
@@ -17,6 +32,14 @@ const ContactForm = () => {
   const [dialogOpen, setDialogOpen] = useState(false);
   const [disableSubmit, setDisableSubmit] = useState(false);
 
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(validationSchema),
+  });
+
   const handleDialogClose = () => {
     setDialogOpen(false);
     setFirstName("");
@@ -26,27 +49,17 @@ const ContactForm = () => {
     setMessage("");
   };
 
-  const handleSubmit = (event: { preventDefault: () => void }) => {
-    event.preventDefault();
-
-    emailjs
-      .send("service_xkg70no", "template_qgo485q", {
-        subject: subject,
-        firstName: firstName,
-        lastName: lastName,
-        message: message,
-        emailAddress: emailAddress,
-      }, "ASY5E4wmtGS_CaZjA")
-      .then(
-        (result) => {
-          console.log(result.text);
-          setDialogOpen(true);
-          setDisableSubmit(true)
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+  const onSubmit = (data: FormValues) => {
+    emailjs.send(serviceId!, templateId!, data, publicKey!).then(
+      (result) => {
+        console.log(result.text);
+        setDialogOpen(true);
+        setDisableSubmit(true);
+      },
+      (error) => {
+        console.log(error.text);
+      }
+    );
   };
 
   return (
@@ -59,67 +72,77 @@ const ContactForm = () => {
           <Grid item xs={12} sm={6}>
             <TextField
               id="firstName"
-              name="firstName"
               label="First Name"
               fullWidth
               autoComplete="given-name"
               variant="filled"
-              onChange={(e) => setFirstName(e.target.value)}
+              {...register("firstName")}
+              error={errors.firstName ? true : false}
             />
           </Grid>
           <Grid item xs={12} sm={6}>
             <TextField
               id="lastName"
-              name="lastName"
               label="Last Name"
               fullWidth
               autoComplete="family-name"
               variant="filled"
-              onChange={(e) => setLastName(e.target.value)}
+              {...register("lastName")}
+              error={errors.lastName ? true : false}
             />
           </Grid>
           <Grid item xs={12}>
             <TextField
               required
               id="email"
-              name="email"
               label="Email Address"
               fullWidth
               autoComplete="email"
               variant="filled"
-              onChange={(e) => setEmailAddress(e.target.value)}
+              {...register("emailAddress")}
+              error={errors.emailAddress ? true : false}
+              helperText={errors.emailAddress?.message}
             />
           </Grid>
           <Grid item xs={12}>
             <TextField
               required
               id="subject"
-              name="subject"
               label="Subject"
               fullWidth
               variant="filled"
-              onChange={(e) => setSubject(e.target.value)}
+              {...register("subject")}
+              error={errors.subject ? true : false}
+              helperText={errors.subject?.message}
             />
           </Grid>
           <Grid item xs={12}>
             <TextField
               required
               id="message"
-              name="message"
               label="Message"
               fullWidth
               variant="filled"
-              helperText="Please enter your message here and I'll get back to you as soon as possible!"
+              helperText={
+                errors.message
+                  ? errors.message?.message
+                  : "Please enter your message here and I'll get back to you as soon as possible!"
+              }
               multiline
               rows={6}
-              onChange={(e) => setMessage(e.target.value)}
+              {...register("message")}
+              error={errors.message ? true : false}
             />
           </Grid>
         </Grid>
       </Fragment>
       <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
-        {/* TODO: ensure that cant send message without filling in required field */}
-        <Button variant="outlined" disabled={disableSubmit} onClick={handleSubmit} sx={{ mt: 3, ml: 1 }}>
+        <Button
+          variant="outlined"
+          disabled={disableSubmit}
+          onClick={handleSubmit(onSubmit)}
+          sx={{ mt: 3, ml: 1 }}
+        >
           Submit
         </Button>
       </Box>

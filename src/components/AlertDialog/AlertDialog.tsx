@@ -5,6 +5,7 @@ import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import Slide from "@mui/material/Slide";
 import { TransitionProps } from "@mui/material/transitions";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
 export const Transition = React.forwardRef(function Transition(
   props: TransitionProps & {
@@ -41,14 +42,16 @@ const AlertDialogSlide = ({
         onClose={handleClose}
         aria-describedby="alert-dialog-slide-description"
       >
-        <DialogTitle>Message Sent!</DialogTitle>
-        <DialogContent>
-          <DialogContentText id="alert-dialog-slide-description">
-            {/* TODO: change the dialong content or format it 
-            TODO: add a little checkmark saying the sending was success */}
-            {`${data.firstName}, ${data.lastName}, ${data.emailAddress}, ${data.subject}, ${data.message}`}
-          </DialogContentText>
-        </DialogContent>
+        <div style={{ textAlign: "center" }}>
+          <DialogTitle>Message Sent!</DialogTitle>
+          <DialogContent>
+            <DialogContentText id="alert-dialog-slide-description">
+              <CheckCircleIcon color="success" fontSize="large" />
+              <br />
+              I'll will get back you as soon as possible!
+            </DialogContentText>
+          </DialogContent>
+        </div>
       </Dialog>
     </div>
   );
