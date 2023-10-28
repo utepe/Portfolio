@@ -43,13 +43,16 @@ const ActionAreaCard = ({ project }: ActionAreaCardProps) => {
   return (
     <Fragment>
       <Card sx={{ maxWidth: 600 }}>
-        {/* FIXME: media to display full image */}
         <CardActionArea onClick={handleClickOpen}>
           <CardMedia
             component="img"
             height="300"
             image={require(`../../assets/projectImages/${image}`)}
             alt={`${title} image`}
+            sx={{
+              width: "100%",
+              height: "auto"
+            }}
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
