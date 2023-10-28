@@ -30,13 +30,12 @@ const Home = () => {
           <Typography variant="h5">A bit about me</Typography>
           <Typography variant="body1" sx={{ textAlign: "left" }}>
             I'm an engineer who loves to learn and build things. I'm currently
-            heavily interested embedded systems and software development and
+            heavily interested embedded systems, software development and
             bridging the gap between hardware and software. I have worked with a
             variety of tools and technologies and am always looking to learn
             more. My ultimate goal is to further improve the link between humans
             and computer systems to aid in the development of new technologies.
-            To do this I have worked in soft robotics, embedded systems and have
-            aided in developing non-conventional Hardware-in-the-Loop
+            To pursue this goal, I have worked in soft robotics, embedded systems and have aided in developing non-conventional Hardware-in-the-Loop
             environment for thermal systems. I have recieved my B.A.S.c in
             Electrical and Computer Engineering with a Minor in Computer Science
             and Mathematics from the University of Windsor.
