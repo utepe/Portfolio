@@ -19,19 +19,11 @@ export const Transition = React.forwardRef(function Transition(
 interface AlertDialogProps {
   dialogOpen: boolean;
   handleClose: () => void;
-  data: {
-    firstName: string;
-    lastName: string;
-    emailAddress: string;
-    subject: string;
-    message: string;
-  };
 }
 
 const AlertDialogSlide = ({
   dialogOpen,
   handleClose,
-  data,
 }: AlertDialogProps) => {
   return (
     <div>

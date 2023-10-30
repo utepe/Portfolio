@@ -149,13 +149,6 @@ const ContactForm = () => {
       <AlertDialogSlide
         dialogOpen={dialogOpen}
         handleClose={handleDialogClose}
-        data={{
-          firstName,
-          lastName,
-          emailAddress,
-          subject,
-          message,
-        }}
       />
     </Fragment>
   );
