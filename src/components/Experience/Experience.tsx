@@ -2,8 +2,8 @@ import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import { styled } from "@mui/material/styles";
-import React from "react";
 import UnorderedList from "../UnorderedList/UnorderedList";
+import DOMPurify from "dompurify";
 
 export const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -27,6 +27,10 @@ type ExperienceCardProps = {
 };
 
 const ExperienceCard = ({ experience }: ExperienceCardProps) => {
+  const sanatizeData = (data: string) => ({
+    __html: DOMPurify.sanitize(data)
+  })
+
   return (
     <Item elevation={1}>
       <Grid
@@ -56,14 +60,13 @@ const ExperienceCard = ({ experience }: ExperienceCardProps) => {
           </Typography>
         </Grid>
       </Grid>
-      {/* 
-        TODO: ensure that links in description are clickable 
-        Maybe use html-react-parser
-        */}
       <UnorderedList
         elements={experience.description}
         renderElement={(element) => (
-          <Typography variant="body1">{element}</Typography>
+          <Typography
+            variant="body1"
+            dangerouslySetInnerHTML={sanatizeData(element)}
+          />
         )}
       />
     </Item>

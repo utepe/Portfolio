@@ -3,7 +3,7 @@ import Stack from "@mui/material/Stack";
 import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
 import { Button, Typography } from "@mui/material";
 
-import experienceData from "../../constants/experience.json";
+import experienceData from "../../constants/experience.html.json";
 import ExperienceCard, {
   Experience,
   Item,
