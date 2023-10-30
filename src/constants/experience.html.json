@@ -23,7 +23,7 @@
         "description": [
             "Designed a HIL environment that allows MATLAB/Simulink models to properly communicate with a physical testbench via LabVIEW without a PLC, allowing easy transfer of data, reducing the setup and tools needed for a HIL environment",
             "Published a conference paper containing setup, models and results of the HIL environment to create a replicable environment for future applications, and presented at EuroSun 2022 Conference",
-            "Publication: <a href='https://proceedings.ises.org/paper/eurosun2022/eurosun2022-0153-Reum.pdf'><em>Novel Hardware-in-the-loop Approach for thermal systems</em></a>",
+            "Publication: <a href='https://proceedings.ises.org/paper/eurosun2022/eurosun2022-0153-Reum.pdf' target='_blank' rel='noopener noreferrer'><em>Novel Hardware-in-the-loop Approach for thermal systems</em></a>",
             "<b>Utilized</b>: MATLAB, Simulink, LabVIEW, Carnot Toolbox, Git"
         ]
     },
@@ -35,7 +35,7 @@
         "startDate": "05/21",
         "endDate": "08/21",
         "description": [
-            "Contracted to the Midmark Corporation to work on their Real-Time Locating System (<a href='https://www.midmark.com/medical/products/rtls'>Midmark RTLS</a>), improving experience of healthcare professionals and patients by providing real-time location tracking of medical equipment",
+            "Contracted to the Midmark Corporation to work on their Real-Time Locating System (<a href='https://www.midmark.com/medical/products/rtls' target='_blank' rel='noopener noreferrer'>Midmark RTLS</a>), improving experience of healthcare professionals and patients by providing real-time location tracking of medical equipment",
             "Coordinated with stakeholders and UX designers to design and integrate over 20 reusable React UI components to improve the user experience of the application",
             "Improved status updates of tracked assets in the application by implementing a WebSocket connection to the backend to allow for real-time updates of asset battery levels",
             "<b>Utilized</b>: Typescript, React, Redux, MaterialUI, C#, ASP.NET, SQL, Visual Studio, Git, Azure DevOps, Azure"
