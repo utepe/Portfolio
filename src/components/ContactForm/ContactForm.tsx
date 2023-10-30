@@ -5,8 +5,10 @@ import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import { Fragment, useState } from "react";
 import AlertDialogSlide from "../AlertDialog/AlertDialog";
+import DialogContentText from "@mui/material/DialogContentText";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
 import emailjs from "@emailjs/browser";
 import validationSchema from "./ContactForm.ValidationSchema";
@@ -24,11 +26,6 @@ type FormValues = {
 };
 
 const ContactForm = () => {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [emailAddress, setEmailAddress] = useState("");
-  const [subject, setSubject] = useState("");
-  const [message, setMessage] = useState("");
   const [dialogOpen, setDialogOpen] = useState(false);
   const [disableSubmit, setDisableSubmit] = useState(false);
 
@@ -42,11 +39,6 @@ const ContactForm = () => {
 
   const handleDialogClose = () => {
     setDialogOpen(false);
-    setFirstName("");
-    setLastName("");
-    setEmailAddress("");
-    setSubject("");
-    setMessage("");
   };
 
   const onSubmit = (data: FormValues) => {
@@ -149,6 +141,14 @@ const ContactForm = () => {
       <AlertDialogSlide
         dialogOpen={dialogOpen}
         handleClose={handleDialogClose}
+        dialogTitle="Message Sent!"
+        dialogContent={
+          <DialogContentText id="alert-dialog-slide-description">
+            <CheckCircleIcon color="success" fontSize="large" />
+            <br />
+            I'll will get back you as soon as possible!
+          </DialogContentText>
+        }
       />
     </Fragment>
   );
