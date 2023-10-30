@@ -10,6 +10,7 @@ import Project from "./routes/Project/Project";
 function App() {
   return (
     <Routes>
+      {/* TODO: fix links so its not /#/XXX prolly has something to do with HashRouter */}
       <Route path="/" element={<NavigationBar />}>
         <Route index element={<Home />} />
         <Route path="/resume" element={<Resume />} />

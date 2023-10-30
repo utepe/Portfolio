@@ -67,8 +67,6 @@ const ActionAreaCard = ({ project }: ActionAreaCardProps) => {
           </CardContent>
         </CardActionArea>
       </Card>
-      {/* TODO: export this Dialog component with Dialog and export transition to both Alert Dialog and this one
-      TODO: have DialogTitle and Dialog Content as props as well making it more modular */}
       <Dialog
         fullWidth
         maxWidth="md"
